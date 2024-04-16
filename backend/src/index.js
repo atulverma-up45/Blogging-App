@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/database.js";
 import userRoutes from "./routes/user.routes.js";
 import blogRoutes from "./routes/blog.routes.js";
-import { imagekit } from "./utils/imageKit.js";
+import  imagekit  from "./utils/imageKit.js";
 import cors from "cors";
 
 dotenv.config();
