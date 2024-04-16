@@ -19,7 +19,7 @@ export const authenticate = async (req, res, next) => {
       process.env.ACCESS_TOKEN_SECRET
     );
     const user = await User.findById(decodedToken?._id).select(
-      "-password -refreshToken"
+      " _id personal_info.firstName personal_info.lastName personal_info.username personal_info.email accountType "
     );
 
     if (!user) {
