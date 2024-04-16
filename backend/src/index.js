@@ -39,6 +39,10 @@ app.use("/api/v1", userRoutes);
 // mount the blogRoutes
 app.use("/api/v1", blogRoutes);
 
+app.get("/", (req, res)=>{
+  res.send("Welcome to blogging app api")
+})
+
 app.listen(port, () => {
   console.log(`Your Server is Running On  Port`, port);
 });
