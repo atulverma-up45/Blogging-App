@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/database.js";
 import userRoutes from "./routes/user.routes.js";
 import blogRoutes from "./routes/blog.routes.js";
-import  imagekit  from "./utils/imageKit.js";
+import imagekit from "./utils/imageKit.js";
 import cors from "cors";
 
 dotenv.config();
@@ -39,9 +39,12 @@ app.use("/api/v1", userRoutes);
 // mount the blogRoutes
 app.use("/api/v1", blogRoutes);
 
-app.get("/", (req, res)=>{
-  res.send("Welcome to blogging app api")
-})
+app.get("/", (req, res) => {
+  return res.status(200).json({
+    message: "Hello World",
+    success: true,
+  });
+});
 
 app.listen(port, () => {
   console.log(`Your Server is Running On  Port`, port);
