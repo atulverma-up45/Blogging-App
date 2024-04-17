@@ -17,11 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // adding cookieParser
 app.use(cookieParser());
-app.use(cors({
-  origin: "https://atul-bloggingapp.vercel.app/", 
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true
-}));
+app.use(cors());
 
 // database connect
 connectDB();
